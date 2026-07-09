@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"  content="width=device-width,initial-scale=1.0"/>
+       <title>L&D MOVE - Voyager en bus a prix reduit</title>
+       <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <!--NAV BAR-->
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <div class="logo-icon">
+                        <img src="logo.JPG" alt="logo" width="50" height="50">
+                        <i class="fas fa-bus"></i></div>
+        <span class="logo-text">L&D <span class="logo-accent">MOVE</span></span></div>
+                    <ul class="nav-links" id="navlinks">
+ <a href="#" onclick="showPage('home')" class="nav-link active" data-page="home">Accueil</a>
+ <a  href="#" onclick="showPage('trajets')" class="nav-link " data-page="trajets">Trajets</a>
+ <a href="#" onclick="showPage('offres')" class="nav-link " data-page="offres">Offres</a>
+ <li><a href="#" class="nav-link " data-page="aide">Aide</a></li>
+ <li><a href="#" class="nav-link " data-page="login">Espace client</a></li>
+                    </ul>
+            </div>
+        </nav>
+        <!--PAGE : ACCEUIL-->
+        <section class="page active" id="page-home">
+            <!--Hero-->
+            <div class="hero">
+                <div class="hero-bg">
+                    <div class="hero-overlay"></div>
+                    <img src="logo.JPG" alt="bus L&D Move" class="hero-img"/>
+                </div>
+                <div class="hero-content">
+                    <span class="hero-badge"><i class="fas fa-tag"></i>
+                    Prix reduits garantis</span>
+                    <h1 class="hero-title">Voyagez en bus <br/> <span class="text-accent">a prix reduit</span></h1>
+                    <p class="hero-sub">Reservez votre siege en quelques clics - Douala,Yaounde,Kribi,Edea et plus.</p>
+             <!--Search bar-->
+<div class="search-card">
+    <div class="search-title">
+        <div class="search-field">
+            <i class="fas fa-search"></i>Trouver un trajet
+            </div>
+            <div class="search-fields">
+                <!--ville de depart-->
+                <div class="search-field">
+                    <div class="search-field-inner"><span class="search-field-label">Depart</span>
+                    <select id="searchDepart"><option value="">Choisir une ville</option>
+                <option>Douala</option>
+                <option>Yaounde</option>
+                <option>Kribi</option>
+                <option>Edea</option>
+            </select>
+        </div>
+        </div>
+        <!--ville d'arrivee-->
+        <div class="search-field">
+            <div class="search-field-inner"><span class="search-field-label">Arrivee</span>
+                    <select id="searchArrivee"><option value="">Choisir une ville</option>
+                <option>Douala</option>
+                <option>Yaounde</option>
+                <option>Kribi</option>
+                <option>Edea</option>
+            </select>
+        </div>
+        </div>
+        <!-- Date-->
+         <div class="search-field full-width">
+            <div class="search-field-icon"><i class="fas fa-calendar-alt"></i></div>
+            <div class="search-field-inner"><span class="search-field-label">Date de depart</span>
+            <input type="date" id="searchDate"></div>
+            <div class="search-swap" id="swapBtn" title="Inverser les villes"><i class="fas fa-exchange-alt"></i></div>
+         </div>
+        <button class="btn-search" id="btnSearch"><i class="fas fa-search"></i>
+            Rechercher un billet <a href="#Trajet" onclick="showPage('trajet')" class="nav-link " data-page="trajet"></a></button>
+
+</div>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+            <!-- Destinations populaires-->
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-eyebrow">Nos trajets</span>
+                    <h2 class="section-title">Destinations populaires</h2>
+                </div>
+                <div class="destinations-grid">
+                    <div class="dest-card" data-trajet="Yaounde-Douala">
+                        <div class="dest-img-wrap">
+                            <img src="yaounde.JPG" alt="yaounde"/>
+                            <div class="dest-overlay"></div>
+                        </div>
+                        <div class="dest-info">
+                            <h3>Yaounde</h3>
+                            <p><i class="fas fa-arrow-right"></i>Douala</p>
+                            <span class="dest-price">A partir de 3 500 FCFA</span>
+                        </div>
+                    </div>
+                    <div class="dest-card" data-trajet="yaounde-kribi">
+                        <div class="dest-img-wrap">
+                            <img src="kribi.JPG" alt="kribi">
+                            <div class="dest-overlay"></div>
+                        </div>
+                        <div class="dest-info">
+                            <h3>Yaounde</h3>
+                            <p><i class="fas fa-arrow-right"></i>Kribi</p>
+                            <span class="dest-price">A partir de 4 500 FCFA</span>
+                        </div>
+                    </div>
+                    <div class="dest-card" data-trajet="Douala-kribi">
+                        <div class="dest-img-wrap">
+                            <img src="douala.JPG" alt="Douala">
+                            <div class="dest-overlay"></div>
+                        </div>
+                        <div class="dest-info">
+                            <h3>Douala</h3>
+                            <p><i class="fas fa-arrow-right"></i>Kribi</p>
+                            <span class="dest-price">A partir de 2 500 FCFA</span>
+                        </div>
+                    </div>
+                    <div class="dest-card" data-trajet="Douala-edea">
+                        <div class="dest-img-wrap">
+                            <img src="edea.JPG" alt="edea">
+                            <div class="dest-overlay"></div>
+                        </div>
+                        <div class="dest-info">
+                            <h3>Douala</h3>
+                            <p><i class="fas fa-arrow-right"></i>Edea</p>
+                            <span class="dest-price">A partir de 1 500 FCFA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pourquoi nous choisir-->
+             <div class="section-container section-dark">
+                <div class="section-header">
+                    <span class="section-eyebrow light">Nos avantages</span>
+                    <h2 class="section-title light">Pourquoi choisir L&D MOVE</h2>
+                </div>
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Securite garantie</h3>
+                <p>Nos chaffeurs sont certifies et nos vehicules regulierement entretenus.</p>
+             </div>
+             <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                <h3>Reservation rapide</h3>
+                <p>Reservez votre billet en moins de 3 minutes depuis votre telephone.</p>
+             </div>
+             <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Paiement Mobile Money</h3>
+                <p>Orange Money et Mobile Money acceptes pour plus de commoditer.</p>
+             </div>
+             <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-ticket-alt"></i></div>
+                <h3>Ticket numerique</h3>
+                <p>Recevez votre ticket instantanement et telechargez-le a tout moment.</p>
+             </div>
+            </div>
+        </div>
+        </section>
+        <!-- PAGE : TRAJETS-->
+         <section class="page" id="page-trajets">
+            <div class="page-hero-mini">
+                <h1>Nos Trajets</h1>
+                <p>Choisissez votre itineraire</p>
+            </div>
+            <div class="section-container">
+                <div class="trajets-grid" id="trajetsGrid">
+                    <div class="trajet-card" data-trajet="Yaounde-Douala">
+                        <div class="trajet-img-wrap">
+                            <img src="bus-interieur.JPG" alt="Yaounde-Douala">
+                            <div class="trajet-badge"><i class="fas fa-fire"></i>Populaire</div>
+                        </div>
+                        <div class="trajet-body">
+                            <div class="trajet-route">
+                                <span>Yaounde</span>
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                                <span>Douala</span>
+                            </div>
+                            <div class="trajet-meta">
+                                <span><i class="fas fa-chock"></i> ~3h</span>
+                                <span><i class="fas fa-road"></i> 240km</span>
+                            </div>
+                            <div class="trajet-price">A partir de <strong>3 500 FCFA</strong></div>
+                            <button class="btn-primary btn-full" onclick="selectTrajet('Yaounde-Douala')">Reserver <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="trajet-card" data-trajet="yaounde-kribi">
+                        <div class="trajet-img-wrap">
+                            <img src="edea.JPG" alt="yaounde-kribi">
+                        </div>
+                        <div class="trajet-body">
+                            <div class="trajet-route">
+                                <span>Yaounde</span>
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                                <span>Kribi</span>
+                            </div>
+                            <div class="trajet-meta">
+                                <span><i class="fas fa-chock"></i> ~4h</span>
+                                <span><i class="fas fa-road"></i> 280km</span>
+                            </div>
+                            <div class="trajet-price">A partir de <strong>4 500 FCFA</strong></div>
+                            <button class="btn-primary btn-full" onclick="selectTrajet('Yaounde-Kribi')">Reserver <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="trajet-card" data-trajet="Yaounde-Edea">
+                        <div class="trajet-img-wrap">
+                            <img src="bus-agence.JPG" alt="Yaounde-edea">
+                        </div>
+                        <div class="trajet-body">
+                            <div class="trajet-route">
+                                <span>Yaounde</span>
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                                <span>Edea</span>
+                            </div>
+                            <div class="trajet-meta">
+                                <span><i class="fas fa-chock"></i> ~2h30</span>
+                                <span><i class="fas fa-road"></i> 180km</span>
+                            </div>
+                            <div class="trajet-price">A partir de <strong>3 000 FCFA</strong></div>
+                            <button class="btn-primary btn-full" onclick="selectTrajet('Yaounde-Edea')">Reserver <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="trajet-card" data-trajet="Douala-kribi">
+                        <div class="trajet-img-wrap">
+                            <img src="douala.JPG" alt="Douala-kribi">
+                        </div>
+                        <div class="trajet-body">
+                            <div class="trajet-route">
+                                <span>Douala</span>
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                                <span>Kribi</span>
+                            </div>
+                            <div class="trajet-meta">
+                                <span><i class="fas fa-chock"></i> ~3h</span>
+                                <span><i class="fas fa-road"></i> 140km</span>
+                            </div>
+                            <div class="trajet-price">A partir de <strong>2 500 FCFA</strong></div>
+                            <button class="btn-primary btn-full" onclick="selectTrajet('Douala-kribi')">Reserver <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="trajet-card" data-trajet="kribi-edea">
+                        <div class="trajet-img-wrap">
+                            <img src="logo.JPG" alt="kribi-Edea">
+                        </div>
+                        <div class="trajet-body">
+                            <div class="trajet-route">
+                                <span>kribi</span>
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                                <span>Edea</span>
+                            </div>
+                            <div class="trajet-meta">
+                                <span><i class="fas fa-chock"></i> ~2h</span>
+                                <span><i class="fas fa-road"></i> 90km</span>
+                            </div>
+                            <div class="trajet-price">A partir de <strong>1 800 FCFA</strong></div>
+                            <button class="btn-primary btn-full" onclick="selectTrajet('kribi-edea')">Reserver <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="trajet-card" data-trajet="Douala-Edea">
+                        <div class="trajet-img-wrap">
+                            <img src="arriere-plan.JPG" alt="Douala-Edea">
+                        </div>
+                        <div class="trajet-body">
+                            <div class="trajet-route">
+                                <span>Douala</span>
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                                <span>Edea</span>
+                            </div>
+                            <div class="trajet-meta">
+                                <span><i class="fas fa-chock"></i> ~1h30</span>
+                                <span><i class="fas fa-road"></i> 60km</span>
+                            </div>
+                            <div class="trajet-price">A partir de <strong>1 500 FCFA</strong></div>
+                            <button class="btn-primary btn-full" onclick="selectTrajet('Yaounde-Douala')">Reserver <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </section>
+         <!--PAGE : RESERVATION-->
+         <section class="page" id="page-reservation">
+            <div class="page-hero-mini">
+                <h1>Reservation</h1>
+                <p>Completez les details de votre voyage</p>
+            </div>
+            <div class="section-container">
+                <!--stes indicator-->
+                <div class="steps-bar">
+                    <div class="step active" data-step="1"><span>1</span>Trajet</div>
+                    <div class="step-line"></div>
+                     <div class="step" data-step="2"><span>2</span>Passager</div>
+                    <div class="step-line"></div>
+                     <div class="step" data-step="3"><span>3</span>Paiement</div>
+                    <div class="step-line"></div>
+                     <div class="step" data-step="4"><span>4</span>Ticket</div>
+                </div>
+                <div class="form-card">
+                    <h2 class="form-card-title"><i class="fas fa-route"></i>Details du trajet</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Trajet <span class="required">*</span></label>
+                            <select id="resTrajet" required>
+                                <option value="">Selectionnez un trajet</option>
+                                <option value="Yaounde-Douala">Yaounde -> Douala</option>
+                                <option value="Yaounde-Kribi">Yaounde -> Kribi</option>
+                                <option value="Yaounde-Edea">Yaounde -> Edea</option>
+                                <option value="Douala-kribi">Douala -> Kribi</option>
+                                <option value="kribi-Edea">kribi -> Edea</option>
+                                <option value="Douala-Edea">Douala -> Edea</option>
+                                </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Date de depart <span class="required">*</span></label>
+                            <input type="date" id="resDate" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Heure de depart <span class="required">*</span></label>
+                            <select id="resHeure" required>
+                                <option value="">Choisir une heure</option>
+                                <option>05:00</option>
+                                <option>07:00</option>
+                                <option>09:00</option>
+                                <option>11:00</option>
+                                <option>14:00</option>
+                                <option>16:00</option>
+                                <option>18:00</option>
+                            </select>
+                        </div>
+                        <div class="form-group"><label>Nombre de sieges <span class="required">*</span></label>
+                            <select id="resSiege" required>
+                                <option value="">Choisir</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                        </div>
+                        <div class="form-group form-full">
+                            <label>Standing / Confort <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <label class="radio-card">
+                                    <input type="radio" name="standing" value="standard"/>
+                                    <div class="radio-content">
+                                        <i class="fas fa-chair"></i>
+                                        <strong>Standard</strong>
+                                        <span>Confort de base</span>
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="standing" value="vip"/>
+                                    <div class="radio-content">
+                                    <i class="fas fa-star"></i>
+                                    <strong>VIP</strong>
+                                    <span>Climatise,plus spacieux</span>
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="standing" value="executive"/>
+                                    <div class="radio-content">
+                                    <i class="fas fa-crown"></i>
+                                    <strong>Executif</strong>
+                                    <span>Premium tout confort</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--price summary-->
+                     <div class="price-summary" id="priceSummary" style="display: none">
+                        <div class="price-row"><span>Trajet</span><span id="summTrajet">-</span></div>
+                        <div class="price-row"><span>Date</span><span id="summDate">-</span></div>
+                        <div class="price-row"><span>Heure</span><span id="summHeure">-</span></div>
+                        <div class="price-row"><span>Sieges</span><span id="summSiege">-</span></div>
+                        <div class="price-row"><span>Standing</span><span id="summStanding">-</span></div>
+                        <div class="price-row price-total"><span>Total estime</span><span id="summTotal">-</span></div>
+                     </div>
+                     <div class="form-actions">
+                        <button class="btn-secondary" onclick="showPage('trajets')"><i class="fas fa-arrow-left"></i>Retour</button>
+                    <button class="btn-primary" id="btnStep1">Suivant <i class="fas fa-arrow-right"></i></button> 
+                    </div>
+                </div>
+            </div>
+         </section>
+         <!--PAGE: PASSAGER-->
+         <section class="page" id="page-passager">
+            <div class="page-hero-mini">
+                <h1>Vos Informations</h1>
+                <p>Entrez vos coordonnes de contact</p>
+            </div>
+            <div class="section-container">
+                <div class="steps-bar">
+                    <div class="step done"><span><i class="fas fa-check"></i></span>Trajet</div>
+                    <div class="step-line done"></div>
+                    <div class="step active" data-step="2"><span>2</span>Passager</div>
+                  <div class="step-line"></div>
+                    <div class="step" data-step="3"><span>3</span>Paiement</div>
+                    <div class="step-line"></div>
+                    <div class="step" data-step="4"><span>4</span>Ticket</div>  
+                </div>
+                <div class="form-card">
+                    <h2 class="form-card-title"><i class="fas fa-user"></i>Informations passager</h2>
+                    <div class="form-grid">
+                        <div class="form-group"><label>Noms et Prenoms <span class="required">*</span></label>
+                        <input type="text" id="passNom" placeholder="Ex: MBELE Jean Pierre" required></div>
+                        <div class="form-group"><label>Numero de telephone <span class="required">*</span></label>
+                            <div class="input-with-prefix"> <span class="prefix">+237</span>
+                            <input type="Tel" placeholder="6XX XXX XXX" maxlength="9" required></div>
+                        </div>
+                        <div class="form-group form-full">
+                            <label>Adresse e-mail</label>
+                            <input type="email" id="passEmail" placeholder="exemple@email.com"/>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-secondary" onclick="showPage('reservation')"><i class="fas fa-arrow-left"></i>Retour</button>
+                    <button class="btn-primary" id="btnStep2">Continuer vers le paiement <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+         </section>
+         <!--PAGE : PAIEMENT-->
+<section class="page" id="page-paiement">
+   <div class="page-hero-mini">
+    <h1>Paiement</h1>
+    <p>Choisissez votre mode de paiement</p>
+   </div>
+   <div class="section-container">
+    <div class="steps-bar">
+        <div class="step done"><span><i class="fas fa-check"></i></span>Trajet</div>
+        <div class="step-line done"></div>
+        <div class="step done"><span><i class="fas fa-check"></i></span>Passager</div>
+        <div class="step-line done"></div>
+        <div class="step active"><span>3</span>Paiement</div>
+        <div class="step-line"></div>
+        <div class="step active"><span>4</span>Ticket</div>
+    </div>
+    <!-- Recap commande-->
+     <div class="order-recap">
+        <h3><i class="fas fa-receipt"></i>Recapitulatif</h3>
+        <div class="recap-grid">
+            <div><span>Passager</span><strong id="recapNom">-</strong></div>
+            <div><span>Trajet</span><strong id="recapTrajet">-</strong></div>
+            <div><span>Date</span><strong id="recapDate">-</strong></div>
+             <div><span>Heure</span><strong id="recapHeure">-</strong></div>
+              <div><span>Sieges</span><strong id="recapSiege">-</strong></div>
+              <div class="recap-total"><span>Montant a payer</span><strong id="recapTotal">-</strong></div>
+        </div>
+     </div>
+     <!-- Mode de paiement -->
+      <div class="payment-methods">
+        <div class="payment-card" id="payOrange" onclick="selectPayment('Orange')">
+            <div class="payment-logo orange-logo">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div class="payment-info"><strong>Orange Money</strong>
+            <span>Paiement via Orange CM</span>
+        </div>
+        <div class="payement-check"><i class="fas fa-check-circle"></i></div>
+        </div>
+        <div class="payment-card" id="payMobile" onclick="selectPayment('mobile')">
+            <div class="payment-logo mobile-logo">
+                <i class="fas fa-wallet"></i>
+            </div>
+            <div class="payment-info"> <strong>Mobile Money</strong>
+            <span>MTN Mobile</span></div>
+            <div class="payment-check"><i class="fas fa-check-circle"></i></div>
+        </div>
+      </div>
+      <!-- Formulaire paiement-->
+       <div class="form-card" id="payForm" style="display: none">
+        <h2 class="form-card-title" id="payFormTitle"><i class="fas fa-lock"></i> Details de paiement</h2>
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Numero de telephone <span class="required">*</span></label>
+                <div class="input-with-prefix">
+                    <span class="prefix">+237</span>
+                    <input type="tel" id="payTel" placeholder="6XX XXX XXX" maxlength="9"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Montant(FCFA)</label>
+                <input type="text" id="payMontant" readonly class="readonly-field"/>
+            </div>
+            <div class="form-group form-full">
+                <label>Code secret / PIN <span class="required">*</span></label>
+                <input type="password" id="payPin" placeholder="......" maxlength="6"/>
+            </div>
+        </div>
+        <div class="form-actions">
+            <button class="btn-secondary" onclick="cancelPayment()"><i class="fas fa-times"></i>Annuler</button>
+            <button class="btn-primary btn-pay" id="btnPay"><i class="fas fa-lock"></i>Payer maintenant</button>
+        </div>
+       </div>
+       <!-- Loading paiement-->
+        <div class="pay-loading" id="payLoading" style="display: none">
+            <div class="spinner"></div>
+            <p>Traitement du paiement en cours...</p>
+            <small>Veuillez confirmer sur votre telephone</small>
+        </div>
+   </div>
+</section>
+<!-- PAGE : TICKET-->
+ <section class="page" id="page-ticket">
+ <div class="page-hero-mini success">
+ <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+ <h1>Réservation confirmée !</h1>
+ <p>Votre ticket de voyage est prêt</p>
+ </div>
+ <div class="section-container">
+ <div class="steps-bar">
+ <div class="step done"><span><i class="fas fa-check"></i></span> Trajet</div>
+ <div class="step-line done"></div>
+ <div class="step done"><span><i class="fas fa-check"></i></span> Passager</div>
+ <div class="step-line done"></div>
+ <div class="step done"><span><i class="fas fa-check"></i></span> Paiement</div>
+ <div class="step-line done"></div>
+ <div class="step active"><span>4</span> Ticket</div>
+ </div>
+ <!-- Ticket visuel -->
+ <div class="ticket" id="ticketCard">
+ <div class="ticket-header">
+ <div class="ticket-logo">
+ <i class="fas fa-bus"></i>
+ <span>L&D MOVE</span>
+ </div>
+ <div class="ticket-ref">
+ <span>Réf.</span>
+ <strong id="ticketRef">–</strong>
+ </div>
+ </div>
+ <div class="ticket-route">
+ <div class="ticket-city">
+    <span class="city-label">Départ</span>
+ <span class="city-name" id="ticketDepart">–</span>
+ </div>
+ <div class="ticket-arrow">
+ <i class="fas fa-plane"></i>
+ <div class="dashed-line"></div>
+ </div>
+ <div class="ticket-city">
+ <span class="city-label">Arrivée</span>
+ <span class="city-name" id="ticketArrivee">–</span>
+ </div>
+ </div>
+ <div class="ticket-details">
+ <div class="ticket-detail">
+ <i class="fas fa-user"></i>
+ <div>
+ <span>Passager</span>
+ <strong id="ticketNom">–</strong>
+ </div>
+ </div>
+ <div class="ticket-detail">
+ <i class="fas fa-calendar-alt"></i>
+ <div>
+ <span>Date</span>
+ <strong id="ticketDate">–</strong>
+ </div>
+ </div>
+ <div class="ticket-detail">
+ <i class="fas fa-chock"></i>
+ <div>
+ <span>Heure</span>
+ <strong id="ticketHeure">–</strong>
+ </div>
+ </div>
+ <div class="ticket-detail">
+ <i class="fas fa-chair"></i>
+ <div>
+ <span>Siège(s)</span>
+ <strong id="ticketSiege">–</strong>
+ </div>
+ </div>
+ <div class="ticket-detail">
+ <i class="fas fa-star"></i>
+ <div>
+ <span>Standing</span>
+ <strong id="ticketStanding">–</strong>
+ </div>
+ </div>
+ <div class="ticket-detail">
+ <i class="fas fa-phone"></i>
+ <div>
+ <span>Téléphone</span>
+ <strong id="ticketTel">–</strong>
+ </div>
+ </div>
+ </div>
+ <div class="ticket-footer">
+ <div class="ticket-qr">
+ <div class="qr-placeholder"><i class="fas fa-qrcode"></i></div>
+ <span>Scanner à l'embarquement</span>
+ </div>
+ <div class="ticket-amount">
+ <span>Montant payé</span>
+ <strong id="ticketMontant">–</strong>
+ </div>
+ </div>
+ <div class="ticket-tear"></div>
+ </div>
+ <div class="ticket-actions">
+ <button class="btn-primary" onclick="downloadTicket()"><i class="fas fa-download"></i> 
+Télécharger le ticket</button>
+ <button class="btn-secondary" onclick="newReservation()"><i class="fas fa-plus"></i> 
+Nouvelle réservation</button>
+ </div>
+ </div>
+</section>
+<!-- PAGE : OFFRES -->
+<section class="page" id="page-offres">
+ <div class="page-hero-mini">
+ <h1>Nos Offres</h1>
+ <p>Profitez de nos promotions exclusives</p>
+ </div>
+ <div class="section-container">
+ <div class="offres-grid">
+ <div class="offre-card featured">
+ <div class="offre-badge">
+!
+ Populaire</div>
+ <div class="offre-icon"><i class="fas fa-percent"></i></div>
+ <h3>Offre Étudiant</h3>
+ <p>20% de réduction sur présentation de votre carte étudiante sur tous les trajets.</p>
+ <div class="offre-prix">–20%</div>
+ <button class="btn-primary" onclick="showPage('trajets')">Réserver maintenant</button>
+ </div>
+ <div class="offre-card">
+ <div class="offre-icon"><i class="fas fa-users"></i></div>
+ <h3>Offre Groupe</h3>
+ <p>Voyagez à 4 personnes ou plus et bénéficiez de 15% de réduction collective.</p>
+ <div class="offre-prix">–15%</div>
+ <button class="btn-primary" onclick="showPage('trajets')">Réserver maintenant</button>
+ </div>
+ <div class="offre-card">
+ <div class="offre-icon"><i class="fas fa-calendar-check"></i></div>
+ <h3>Réservation Anticipée</h3>
+ <p>Réservez 7 jours à l'avance et économisez 10% sur votre billet.</p>
+ <div class="offre-prix">–10%</div>
+ <button class="btn-primary" onclick="showPage('trajets')">Réserver maintenant</button>
+ </div>
+ </div>
+ </div>
+</section>
+<!-- PAGE : AIDE -->
+<section class="page" id="page-aide">
+ <div class="page-hero-mini">
+ <h1>Centre d'aide</h1>
+ <p>Comment pouvons-nous vous aider ?</p>
+ </div>
+ <div class="section-container">
+ <div class="faq-list">
+ <div class="faq-item">
+ <button class="faq-question" onclick="toggleFaq(this)">
+ Comment réserver mon billet ? <i class="fas fa-chevron-down"></i>
+ </button>
+ <div class="faq-answer">
+ <p>Allez sur la page "Trajet", choisissez votre itinéraire, remplissez vos informations et 
+procédez au paiement via Orange Money ou Mobile Money.</p>
+ </div>
+ </div>
+ <div class="faq-item">
+ <button class="faq-question" onclick="toggleFaq(this)">
+ Comment annuler ma réservation ? <i class="fas fa-chevron-down"></i>
+ </button>
+ <div class="faq-answer">
+ <p>Connectez-vous à votre espace client et accédez à "Mes réservations". Vous pouvez 
+annuler jusqu'à 24h avant le départ pour un remboursement complet.</p>
+ </div>
+ </div>
+ <div class="faq-item">
+ <button class="faq-question" onclick="toggleFaq(this)">
+ Quels modes de paiement sont acceptés ? <i class="fas fa-chevron-down"></i>
+ </button>
+ <div class="faq-answer">
+ <p>Nous acceptons Orange Money (Orange Cameroun) et Mobile Money (MTN Cameroun). 
+D'autres modes de paiement seront bientôt disponibles.</p>
+ </div>
+ </div>
+ <div class="faq-item">
+ <button class="faq-question" onclick="toggleFaq(this)">
+ Où puis-je récupérer mon ticket ? <i class="fas fa-chevron-down"></i>
+ </button>
+ <div class="faq-answer">
+ <p>Après paiement, votre ticket est disponible immédiatement dans l'application. Vous 
+pouvez le télécharger ou le recevoir par e-mail.</p>
+ </div>
+ </div>
+ <div class="faq-item">
+ <button class="faq-question" onclick="toggleFaq(this)">
+ Bagages : quelle est la politique ? <i class="fas fa-chevron-down"></i>
+ </button>
+ <div class="faq-answer">
+ <p>Chaque passager peut transporter gratuitement un bagage en soute (max 20 kg) et un 
+bagage à main (max 7 kg). Des frais supplémentaires s'appliquent au-delà.</p>
+ </div>
+ </div>
+ </div>
+ <div class="contact-box">
+ <h3><i class="fas fa-headset"></i> Besoin d'aide supplémentaire ?</h3>
+ <div class="contact-options">
+ <a href="tel:+237657744300" class="contact-option">
+ <i class="fas fa-phone"></i>
+ <span>+237 6 577 443 00</span>
+ </a>
+ <a href="mailto:support@dlmove.cm" class="contact-option">
+ <i class="fas fa-envelope"></i>
+ <span>support@dlmove.cm</span>
+ </a>
+ <a href="#" class="contact-option">
+ <i class="fab fa-whatsapp"></i>
+ <span>WhatsApp</span>
+ </a>
+ </div>
+ </div>
+ </div>
+</section>
+<!-- PAGE : LOGIN -->
+<section class="page" id="page-login">
+ <div class="auth-container">
+ <!-- Login Form -->
+ <div class="auth-card" id="loginForm">
+ <div class="auth-logo">
+ <div class="logo-icon"><i class="fas fa-bus"></i></div>
+ <span>L&D MOVE</span>
+ </div>
+ <h2>Connexion</h2>
+ <p class="auth-sub">Accédez à votre espace client</p>
+ <div class="form-group">
+ <label>Numéro de téléphone ou E-mail</label>
+ <input type="text" placeholder="6XX XXX XXX ou email@..." />
+ </div>
+ <div class="form-group">
+ <label>Mot de passe</label>
+ <div class="input-with-eye">
+ <input type="password" id="loginPwd" placeholder="••••••••" />
+ <button type="button" onclick="togglePwd('loginPwd', this)"><i class="fas fa-eye"></i></
+button>
+ </div>
+ </div>
+ <a href="#" class="forgot-pwd">Mot de passe oublié ?</a>
+ <button class="btn-primary btn-full" style="margin-top:1rem">Se connecter</button>
+ <p class="auth-switch">Pas encore de compte ? <a href="#" 
+onclick="switchAuth('signup')">S'inscrire</a></p>
+ </div>
+ <!-- Sign Up Form -->
+ <div class="auth-card" id="signupForm" style="display:none">
+ <div class="auth-logo">
+ <div class="logo-icon"><i class="fas fa-bus"></i></div>
+ <span>L&D MOVE</span>
+ </div>
+ <h2>Créer un compte</h2>
+ <p class="auth-sub">Rejoignez D&L Move dès aujourd'hui</p>
+ <div class="form-grid">
+ <div class="form-group">
+ <label>Prénom <span class="required">*</span></label>
+ <input type="text" placeholder="Jean" />
+ </div>
+ <div class="form-group">
+ <label>Nom <span class="required">*</span></label>
+ <input type="text" placeholder="MBELE" />
+ </div>
+ <div class="form-group form-full">
+ <label>Date de naissance</label>
+ <input type="date" />
+ </div>
+ <div class="form-group form-full">
+ <label>E-mail</label>
+ <input type="email" placeholder="email@exemple.com" />
+ </div>
+ <div class="form-group form-full">
+ <label>Téléphone <span class="required">*</span></label>
+ <div class="input-with-prefix">
+ <span class="prefix">
+!
+ +237</span>
+ <input type="tel" placeholder="6XX XXX XXX" maxlength="9" />
+ </div>
+ </div>
+ <div class="form-group form-full">
+ <label>Mot de passe <span class="required">*</span></label>
+ <div class="input-with-eye">
+ <input type="password" id="signupPwd" placeholder="Minimum 8 caractères" />
+ <button type="button" onclick="togglePwd('signupPwd', this)"><i class="fas fa-eye"></i></
+button>
+ </div>
+ </div>
+ <div class="form-group form-full">
+ <label>Confirmer le mot de passe <span class="required">*</span></label>
+ <input type="password" placeholder="••••••••" />
+ </div>
+ </div>
+ <p class="terms-text">En créant un compte, vous acceptez nos <a href="#">Conditions 
+d'utilisation</a></p>
+ <button class="btn-primary btn-full">Créer mon compte</button>
+ <p class="auth-switch">Déjà un compte ? <a href="#" onclick="switchAuth('login')">Se 
+connecter</a></p>
+ </div>
+ </div>
+</section>
+<!-- 
+══════════════════════════════════════════════
+═════
+ FOOTER
+══════════════════════════════════════════════
+══════ -->
+<footer class="footer">
+ <div class="footer-container">
+ <div class="footer-brand">
+ <div class="logo-icon"><i class="fas fa-bus"></i></div>
+ <img src="logo.JPG" alt="logo" height="50" width="50">
+ <span class="logo-text">L&D <span class="logo-accent">MOVE</span></span>
+ <p>Voyagez mieux, payez moins.</p>
+ </div>
+ <div class="footer-links">
+ </div>
+ <div class="footer-links">
+ <h4>Contact</h4>
+ <span><i class="fas fa-phone"></i> +237 6 57 744 300</span>
+ <span><i class="fas fa-phone"></i> +237 6 97 356 595</span>
+ <span><i class="fas fa-envelope"></i> support@ldmove.cm</span>
+ <span><i class="fas fa-map-marker-alt"></i> Douala, Cameroun</span>
+ </div>
+ </div>
+ <div class="footer-bottom">
+ <p>© 2025 L&D Move. Tous droits réservés.</p>
+ </div>
+</footer>
+<!-- Toast notification -->
+<div class="toast" id="toast"></div>
+<script src="responsive.js"></script>
+    </body>
+</html>
